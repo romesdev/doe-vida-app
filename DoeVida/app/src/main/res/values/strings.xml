@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Doe Vida</string>
+    <string name="doar">Doações</string>
+    <string name="home">Início</string>
+    <string name="info">Info</string>
+    <string name="amigos">Amigos</string>
+    <string name="local">Onde?</string>
+</resources>
