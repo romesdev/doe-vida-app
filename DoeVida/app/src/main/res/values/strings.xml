@@ -5,4 +5,20 @@
     <string name="info">Info</string>
     <string name="amigos">Amigos</string>
     <string name="local">Onde?</string>
+    <string name="nomeDoador"> Nome do Doador </string>
+    <string name="nome_do_doador"> Nome Completo </string>
+    <string name="e_mail"> E-mail </string>
+    <string name="telefone"> Telefone </string>
+    <string name="centro_de_doa_o"> Centro de Doação </string>
+    <string name="data_da_doa_o">Data da Doação</string>
+
+
+    <string-array name="centros_itens">
+        <item> Hemoce Crato</item>
+        <item> Hemoce Fortaleza  </item>
+        <item> Hemoce Iguatu </item>
+        <item>Hemoce Juazeiro do Norte</item>
+        <item> Hemoce Quixadá </item>
+        <item> Hemoce Sobral </item>
+    </string-array>
 </resources>
