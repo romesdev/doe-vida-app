@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view_home"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
@@ -24,7 +24,7 @@
             android:orientation="horizontal"
             android:background="#D3C7C9">
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/icon_img_home"
+                android:id="@+id/icon_img"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_alignParentLeft="true"
@@ -43,11 +43,11 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="2dp"
-                android:layout_toEndOf="@id/icon_img_home"
-                android:layout_toRightOf="@id/icon_img_home" >
+                android:layout_toEndOf="@id/icon_img"
+                android:layout_toRightOf="@id/icon_img" >
 
                 <TextView
-                    android:id="@+id/data_home"
+                    android:id="@+id/data"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
@@ -57,19 +57,19 @@
                     android:text="20 de Fev de 2015">
                 </TextView>
                 <TextView
-                    android:id="@+id/centro_home"
+                    android:id="@+id/centro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
                     android:textColor="#090909"
                     android:textSize="18dp"
                     android:textStyle="italic"
-                    android:text="Hemoce Juazeiro do Norte"/>
+                    android:text="Hemoce Iguatu"/>
 
             </LinearLayout>
 
             <TextView
-                android:id="@+id/state_home"
+                android:id="@+id/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

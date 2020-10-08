@@ -11,6 +11,7 @@
     <string name="telefone"> Telefone </string>
     <string name="centro_de_doa_o"> Centro de Doação </string>
     <string name="data_da_doa_o">Data da Doação</string>
+    <string name="doa_es">Suas Doações</string>
 
 
     <string-array name="centros_itens">
