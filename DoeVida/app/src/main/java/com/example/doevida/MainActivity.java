@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.FirebaseApp;
 
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseApp.initializeApp(this);
 
         this.mViewHolder.bottomNav = findViewById(R.id.bottom_navigation);
         this.mViewHolder.bottomNav.setOnNavigationItemSelectedListener(navListener);

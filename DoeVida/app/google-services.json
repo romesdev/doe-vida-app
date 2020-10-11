@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "56147212986",
+    "firebase_url": "https://doevida-fc001.firebaseio.com",
+    "project_id": "doevida-fc001",
+    "storage_bucket": "doevida-fc001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56147212986:android:96e259403420bfae2da083",
+        "android_client_info": {
+          "package_name": "com.example.doevida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56147212986-lh0pi4o98brft6vmbd1quvail1krao9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doevida",
+            "certificate_hash": "654a12d613c38b936d88d1371c613d0d4260ff33"
+          }
+        },
+        {
+          "client_id": "56147212986-6l8nt7355oq21aepfttj193o0mvllhsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAclj6QHPn2_1V5_AtWYfeVfedS9eTFo48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56147212986-6l8nt7355oq21aepfttj193o0mvllhsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
