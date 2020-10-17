@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/data_selec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecione a Data"
+        android:textColor="#ffff"
+        android:textSize="24sp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="48dp"
+        />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginLeft="52dp"
+        android:background="@drawable/bg_calendar">
+
+        <CalendarView
+            android:layout_width="wrap_content"
+            android:layout_height="320dp">
+        </CalendarView>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button"
+        android:text="Salvar Data"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="48dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="#fff">
+
+
+    </Button>
+
+
+</LinearLayout>

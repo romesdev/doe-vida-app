@@ -67,7 +67,41 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
         this.listDoacoes = new ArrayList<>();
         this.mAdapter = new recyAdapter(this.listDoacoes,getContext());
 
+        //recyclerview - lista de doações
         this.mViewHolder.recyclerView.setAdapter(mAdapter);
+        this.mViewHolder.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        this.mViewHolder.recyclerView.addOnItemTouchListener(
+                new ClickListener(
+                        getContext(),
+                        this.mViewHolder.recyclerView,
+                        new ClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                Doacao doacao = listDoacoes.get( position );
+                                Toast.makeText(getContext(), "" + doacao.getData(), Toast.LENGTH_SHORT).show();
+                                itemSelecionado = position;
+
+
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                Doacao doacao = listDoacoes.get( position );
+                                Toast.makeText(getContext(), "" + doacao.getData(), Toast.LENGTH_SHORT).show();
+                                itemSelecionado = position;
+
+                            }
+                        }
+                )
+
+
+        );
+
         this.mViewHolder.fab.setOnClickListener(this);
 
         mostrarDados();
@@ -103,8 +137,10 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
                             listDoacoes.add(doacao);
                         }
                         //mAdapter
-                        mAdapter = new recyAdapter(listDoacoes, getContext());
-                        mViewHolder.recyclerView.setAdapter(mAdapter);
+                        if (getActivity()!=null) {
+                            mAdapter = new recyAdapter(listDoacoes, getContext());
+                            mViewHolder.recyclerView.setAdapter(mAdapter);
+                        }
 
                     }
                 })
@@ -118,13 +154,23 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
                 });
     }
 
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = new MenuInflater(getContext());
+//        inflater.inflate(R.menu.menu_fragment_doar, menu);
+//        return true;
+//    }
 
     @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_fragment_doar, menu);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
     }
 
-
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_fragment_doar, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -153,7 +199,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Doacao doacao = listDoacoes.get( position );
-        Toast.makeText(getContext(), "" + doacao.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "00000" + doacao.toString(), Toast.LENGTH_SHORT).show();
         this.itemSelecionado = position;
 
 
@@ -230,6 +276,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
                 intent.putExtra("centro", doacao.getCentro());
                 intent.putExtra("telefone", doacao.getTelefone());
                 intent.putExtra("data", doacao.getData());
+                intent.putExtra("email", doacao.getEmail());
                 intent.putExtra("status", doacao.getStatus());
 
                 Toast.makeText(getContext(), doacao.getId().toString(), Toast.LENGTH_SHORT).show();

@@ -91,6 +91,8 @@ public class Doacao {
             default:
                 break;
         }
+
+        this.centro = centro;
     }
 
     public String getData() {

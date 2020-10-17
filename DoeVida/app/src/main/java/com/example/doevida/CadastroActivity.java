@@ -41,7 +41,7 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
 
     private String editarId;
     private ArrayAdapter<CharSequence> adapterCentros;
-    private int selCentro;
+    private String selCentro;
 
     //flags
     private boolean editar;
@@ -79,8 +79,7 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
             String telefone = ( String )getIntent().getExtras().get( "telefone" );
             String data = ( String )getIntent().getExtras().get( "data" );
             String status = ( String )getIntent().getExtras().get( "status" );
-
-            int centro = (int )getIntent().getExtras().get( "centro" );
+            String centro = ( String ) getIntent().getExtras().get( "centro" );
 
 
 
@@ -92,8 +91,34 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
             this.mViewHolder.editEmail.setText(email);
             this.mViewHolder.editTelefone.setText(telefone);
             this.mViewHolder.textData.setText(data);
-            this.mViewHolder.textStatus.setText(status);
-            this.mViewHolder.spiCentros.setSelection(centro);
+            //this.mViewHolder.textStatus.setText(status);
+
+            switch (centro){
+
+                case "Hemoce Crato":
+                    this.mViewHolder.spiCentros.setSelection(0);
+                    break;
+                case "Hemoce Fortaleza":
+                    this.mViewHolder.spiCentros.setSelection(1);
+                    break;
+                case "Hemoce Iguatu":
+                    this.mViewHolder.spiCentros.setSelection(2);
+                    break;
+                case "Hemoce Juazeiro do Norte":
+                    this.mViewHolder.spiCentros.setSelection(3);
+                    break;
+                case "Hemoce Quixadá":
+                    this.mViewHolder.spiCentros.setSelection(4);
+                    break;
+                case "Hemoce Sobral":
+                    this.mViewHolder.spiCentros.setSelection(5);
+                    break;
+                default:
+                    this.mViewHolder.spiCentros.setSelection(1);
+                    break;
+
+            }
+            //this.mViewHolder.spiCentros.setSelection();
 
             editar = true;
 
@@ -108,7 +133,7 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
         //this.mViewHolder.spiCentros.getSelectedItemPosition();
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
-        this.selCentro = position;
+        this.selCentro = text;
 
     }
 
@@ -160,9 +185,17 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
         String email = this.mViewHolder.editEmail.getText().toString();
         String telefone = this.mViewHolder.editTelefone.getText().toString();
         String data = this.mViewHolder.textData.getText().toString();
-        String status = this.mViewHolder.textStatus.getText().toString();
-        int idCentro = this.selCentro;
+        //String status = this.mViewHolder.textStatus.getText().toString();
+        String centro = this.selCentro;
         String id = UUID.randomUUID().toString();//função para gerar os ids
+
+        String status = "";
+        if (statusFlag == true) {
+            status = "Realizada";
+        }
+        else status = "Agendada";
+
+
 
         //documento
         Map<String, Object> doc = new HashMap<>();
@@ -171,7 +204,7 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
         doc.put("telefone", telefone);
         doc.put("data", data);
         doc.put("data", data);
-        doc.put("centro", idCentro);
+        doc.put("centro", centro);
         doc.put("id", id);
 
 
@@ -196,7 +229,7 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
         intent.putExtra("email", email);
         intent.putExtra("telefone", telefone);
         intent.putExtra("data", data );
-        intent.putExtra("centro", idCentro);
+        intent.putExtra("centro", centro);
 
         //confirmação de ação realizada
         setResult(Constantes.RESULT_ADD, intent);
@@ -214,14 +247,20 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
         String email = this.mViewHolder.editEmail.getText().toString();
         String telefone = this.mViewHolder.editTelefone.getText().toString();
         String data = this.mViewHolder.textData.getText().toString();
-        String status = this.mViewHolder.textStatus.getText().toString();
-        int idCentro = this.selCentro;
+        //String status = this.mViewHolder.textStatus.getText().toString();
+        String centro = this.selCentro;
         //o meu id é o editarId = variável que guarda o ID em edição
+
+        String status = "";
+        if (statusFlag == true) {
+            status = "Realizada";
+        }
+        else status = "Agendada";
 
         //método para editar os dados
         db.collection("doações").document(this.editarId)
                 .update("nome", nome, "email", email,
-                        "telefone", telefone, "data", data, "centro", idCentro,
+                        "telefone", telefone, "data", data, "centro", centro,
                         "status", status )
                 .addOnCompleteListener(new OnCompleteListener<Void>() {//sucesso
                     @Override
@@ -243,7 +282,7 @@ public class CadastroActivity extends AppCompatActivity implements  AdapterView.
         intent.putExtra("telefone", telefone);
         intent.putExtra("data", data );
         intent.putExtra("status", status );
-        intent.putExtra("centro", idCentro);
+        intent.putExtra("centro", centro);
 
         //confirmação de ação realizada
         setResult(Constantes.RESULT_ADD, intent);
