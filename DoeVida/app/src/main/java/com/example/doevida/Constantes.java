@@ -7,4 +7,8 @@ public class Constantes {
     public static int RESULT_ADD = 21;
     public static int RESULT_CANCEL = 22;
 
+    public static int REQUEST_DATA = 00;
+    public static int REQUEST_DATA_BACK = 55;
+
+
 }

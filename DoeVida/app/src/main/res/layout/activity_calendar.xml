@@ -25,6 +25,7 @@
         android:background="@drawable/bg_calendar">
 
         <CalendarView
+            android:id="@+id/view_calendar"
             android:layout_width="wrap_content"
             android:layout_height="320dp">
         </CalendarView>
@@ -33,6 +34,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_button"
@@ -41,7 +43,8 @@
         android:layout_marginTop="48dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:textColor="#fff">
+        android:textColor="#fff"
+        android:onClick="salvarData">
 
 
     </Button>

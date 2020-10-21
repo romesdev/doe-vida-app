@@ -110,7 +110,10 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
             android:text="@string/data_da_doa_o"
-            android:textColor="#E91E63"></Button>
+            android:textColor="#E91E63"
+            android:onClick="modificarData">
+
+        </Button>
 
 
         <TextView

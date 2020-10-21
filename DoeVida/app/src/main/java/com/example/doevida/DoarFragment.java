@@ -20,16 +20,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-
-import static com.google.firebase.firestore.FieldValue.delete;
 
 public class DoarFragment extends Fragment implements  View.OnClickListener, AdapterView.OnItemClickListener {
 
@@ -44,6 +40,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
     private int itemSelecionado;
     private ArrayList<Doacao> listDoacoes;
     FirebaseFirestore dbFire;// Cloud Firestore
+    String idUserAtual;
 
 
 
@@ -56,6 +53,8 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
 
         //FirebaseApp.initializeApp(getContext());
         this.dbFire = FirebaseFirestore.getInstance();
+        this.idUserAtual = UserFirebase.getIDUsuario();
+
 
 
         this.mViewHolder.fab = view.findViewById(R.id.fab_add);
@@ -113,7 +112,9 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
 
 
     public void mostrarDados(){
-        this.dbFire.collection("doações")
+
+        this.dbFire.collection("usuarios").document(this.idUserAtual)
+                .collection("doações")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     //private ArrayAdapter mAdapter;
@@ -261,12 +262,12 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
 
 
     public void adicionar(){
-        Intent intent = new Intent( getContext(), CadastroActivity.class );
+        Intent intent = new Intent( getContext(), CadastroDoacaoActivity.class );
         startActivityForResult( intent, Constantes.REQUEST_ADD );
     }
 
     public void editar(){
-        Intent intent = new Intent(getContext(), CadastroActivity.class);
+        Intent intent = new Intent(getContext(), CadastroDoacaoActivity.class);
 
         if (this.itemSelecionado != (-1)) {
             if (this.listDoacoes.size() > 0) {

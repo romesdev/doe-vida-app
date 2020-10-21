@@ -7,12 +7,16 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -29,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewHolder mViewHolder = new ViewHolder();
 
+    //firebase
+    private FirebaseAuth auth;
+
 
 
     @Override
@@ -37,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FirebaseApp.initializeApp(this);
+        auth = ConfiguracaoFirebase.getFirebaseAuth();
 
         this.mViewHolder.bottomNav = findViewById(R.id.bottom_navigation);
         this.mViewHolder.bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -84,4 +92,48 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_principal, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menuSair:
+                deslogar();
+                finish();
+                break;
+
+            case R.id.menuConfig:
+                abrirConfig();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void deslogar(){
+
+        try{
+            auth.signOut();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirConfig(){
+        Intent intent = new Intent(this, ConfigActivity.class);
+        startActivity(intent);
+
+    }
+
 }
+
+

@@ -13,6 +13,7 @@
     <string name="data_da_doa_o">Data da Doação</string>
     <string name="doa_es">Suas Doações</string>
     <string name="_20_de_fev_2015">20 de fev 2015</string>
+    <string name="map_key" translatable="false">AIzaSyAclj6QHPn2_1V5_AtWYfeVfedS9eTFo48</string>
 
 
     <string-array name="centros_itens">
