@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                     switch (item.getItemId()) {
-                        case R.id.home:
-                            //selectedFragment = new HomeFragment();
-                            fragmentTransaction.replace(R.id.fragment_content, new HomeFragment()).commit();
-                            return true;
-                            //break;
+//                        case R.id.home:
+//                            //selectedFragment = new HomeFragment();
+//                            fragmentTransaction.replace(R.id.fragment_content, new HomeFragment()).commit();
+//                            return true;
+//                            //break;
                         case R.id.doacao:
                             //selectedFragment = new DoarFragment();
                             fragmentTransaction.replace(R.id.fragment_content, new DoarFragment()).commit();
@@ -88,10 +88,10 @@ public class MainActivity extends AppCompatActivity {
                             fragmentTransaction.replace(R.id.fragment_content, new LocalFragment()).commit();
                             return true;
                             //break;
-                        case R.id.amigos:
-                            //selectedFragment = new AmigosFragment();
-                            fragmentTransaction.replace(R.id.fragment_content, new AmigosFragment()).commit();
-                            return true;
+//                        case R.id.amigos:
+//                            //selectedFragment = new AmigosFragment();
+//                            fragmentTransaction.replace(R.id.fragment_content, new AmigosFragment()).commit();
+//                            return true;
                             //break;
                     }
                     //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_content, selectedFragment).commit();
