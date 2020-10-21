@@ -1,9 +1,9 @@
-package com.example.doevida;
-
-import android.widget.Toast;
+package com.example.doevida.model;
 
 import androidx.annotation.NonNull;
 
+import com.example.doevida.config.ConfiguracaoFirebase;
+import com.example.doevida.config.UserFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;

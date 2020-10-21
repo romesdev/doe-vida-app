@@ -1,4 +1,4 @@
-package com.example.doevida;
+package com.example.doevida.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.doevida.fragment.AmigosFragment;
+import com.example.doevida.config.ConfiguracaoFirebase;
+import com.example.doevida.fragment.DoarFragment;
+import com.example.doevida.fragment.HomeFragment;
+import com.example.doevida.fragment.InfoFragment;
+import com.example.doevida.fragment.LocalFragment;
+import com.example.doevida.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.FirebaseApp;
@@ -130,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void abrirConfig(){
         Intent intent = new Intent(this, ConfigActivity.class);
+
         startActivity(intent);
 
     }

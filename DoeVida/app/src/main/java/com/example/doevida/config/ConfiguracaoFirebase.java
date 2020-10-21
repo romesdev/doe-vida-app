@@ -1,4 +1,4 @@
-package com.example.doevida;
+package com.example.doevida.config;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;

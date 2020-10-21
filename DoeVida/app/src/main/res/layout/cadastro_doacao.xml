@@ -126,7 +126,7 @@
             android:fontFamily="sans-serif-black"
             android:textSize="20sp"
             android:textStyle="italic"
-            android:text="@string/_20_de_fev_2015"
+            android:text="Escolha a data"
             android:textColor="#E91E63">
     </TextView>
 

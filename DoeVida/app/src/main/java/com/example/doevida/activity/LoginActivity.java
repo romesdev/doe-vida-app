@@ -1,14 +1,19 @@
-package com.example.doevida;
+package com.example.doevida.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.doevida.CarregarDados;
+import com.example.doevida.config.ConfiguracaoFirebase;
+import com.example.doevida.R;
+import com.example.doevida.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -29,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         private ViewHolder mViewHolder = new ViewHolder();
         private FirebaseAuth auth;
 
+        private CarregarDados load;
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,12 @@ public class LoginActivity extends AppCompatActivity {
             setContentView(R.layout.activity_login);
 
             auth = ConfiguracaoFirebase.getFirebaseAuth();
+
+            //CarregarDados load = new CarregarDados(LoginActivity.this);
+
+
+
+
 
             this.mViewHolder.nomeApp = findViewById(R.id.nomeApp);
             this.mViewHolder.email = findViewById(R.id.editLoginEmail);
@@ -46,6 +59,8 @@ public class LoginActivity extends AppCompatActivity {
         protected void onStart() {
             super.onStart();
             FirebaseUser usuarioAtual = auth.getCurrentUser();
+
+
             if (usuarioAtual != null) {
                 irParaPrincipal();
             }

@@ -1,4 +1,4 @@
-package com.example.doevida;
+package com.example.doevida.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.doevida.config.Base64Custom;
+import com.example.doevida.config.ConfiguracaoFirebase;
+import com.example.doevida.R;
+import com.example.doevida.config.UserFirebase;
+import com.example.doevida.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;

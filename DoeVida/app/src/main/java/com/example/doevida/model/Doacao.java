@@ -1,4 +1,4 @@
-package com.example.doevida;
+package com.example.doevida.model;
 
 public class Doacao {
     String id;

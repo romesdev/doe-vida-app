@@ -15,6 +15,27 @@
     <string name="_20_de_fev_2015">20 de fev 2015</string>
     <string name="map_key" translatable="false">AIzaSyAclj6QHPn2_1V5_AtWYfeVfedS9eTFo48</string>
 
+    <string name="texto1" >PARA SER DOADOR DE SANGUE É PRECISO:
+         </string>
+    <string name="texto2" >- Estar saudável
+         </string>
+
+    <string name="texto3" >- Estar bem alimentado (evitar alimentos gordurosos nas 3 horas que antecedem a doação)
+         </string>
+    <string name="texto4" >- Estar descansado (ter dormido pelo menos 6 horas nas últimas 24 horas).
+         </string>
+
+    <string name="texto5" >- Pesar acima de 50kg
+         </string>
+
+    <string name="texto6" >- Ter entre 16 e 69 anos, desde que a primeira doação tenha sido feita até 60 anos
+         </string>
+    <string name="texto7" >- apresentar documento de identificação com foto, emitido por órgão oficial, sendo aceita fotocópia autenticada do documento, desde que as fotos e inscrições estejam legíveis e as imagens permitam a identificação do portador.
+         </string>
+    <string name="texto8">Documentos aceitos: carteira de identidade, carteira de trabalho, carteira de habilitação, carteira de identidade profissional, reservista ou passaporte.</string>
+
+
+
 
     <string-array name="centros_itens">
         <item> Hemoce Crato</item>
@@ -24,4 +45,35 @@
         <item> Hemoce Quixadá </item>
         <item> Hemoce Sobral </item>
     </string-array>
+
+    <string name="crato">Hemoce Crato</string>
+    <string name="fortaleza">Hemoce Fortaleza</string>
+
+    <string name="iguatu">Hemoce Iguatu</string>
+
+    <string name="juazeiro">Hemoce Juazeiro</string>
+
+    <string name="quixada">Hemoce Quixadá</string>
+    <string name="sobral">Hemoce Sobral</string>
+    <string name="title_activity_maps2">Map</string>
+
+    <string name="end_crato">Coronel Antônio Luís, 1.111</string>
+    <string name="bar_crato">Bairro: Pimenta - Cep: 63105-000</string>
+    <string name="end_fortaleza">Rua: Barão do Rio Branco, 1816</string>
+    <string name="bar_for"> Centro - CEP: 60.025-061</string>
+
+
+    <string name="end_iguatu">Rua: Edilson de Melo Távora, s/n </string>
+    <string name="bar_igt">Bairro: Esplanada II - Cep: 63505-182 </string>
+
+
+    <string name="end_juazeiro">Rua Beata Maria de Araújo, 30</string>
+    <string name="bar_jua">Bairro: Romeirão - Cep: 63050-720</string>
+
+    <string name="end_quixada">Av. Francisco Almeida Pinheiro, 2340</string>
+    <string name="bar_qxd">Planalto Universitário Cep:  63902-125</string>
+
+    <string name="end_sobral">Rua José Maria Alverne, 383</string>
+    <string name="bar_sobral">Bairro Centro - Cep: 62.014-0450</string>
+
 </resources>

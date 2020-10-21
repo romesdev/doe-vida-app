@@ -12,83 +12,11 @@
     app:cardUseCompatPadding="true">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:animateLayoutChanges="true"
-        android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            android:background="#D3C7C9">
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/icon_img_home"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                app:srcCompat="@drawable/ic_baseline_person_24">
-
-            </androidx.appcompat.widget.AppCompatImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:animateLayoutChanges="true"
-                android:orientation="vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="2dp"
-                android:layout_toEndOf="@id/icon_img_home"
-                android:layout_toRightOf="@id/icon_img_home" >
-
-                <TextView
-                    android:id="@+id/data_home"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:textColor="#090909"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:text="20 de Fev de 2015">
-                </TextView>
-                <TextView
-                    android:id="@+id/centro_home"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:textColor="#090909"
-                    android:textSize="18dp"
-                    android:textStyle="italic"
-                    android:text="Hemoce Juazeiro do Norte"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/state_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="6dp"
-                android:layout_marginBottom="6dp"
-                android:textColor="#090909"
-                android:textSize="16dp"
-                android:textStyle="italic"
-                android:text="Agendada"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"/>
-
-
-
-        </RelativeLayout>
-
-
-
-    </LinearLayout>
 
 
 

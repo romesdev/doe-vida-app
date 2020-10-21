@@ -1,4 +1,4 @@
-package com.example.doevida;
+package com.example.doevida.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,9 +15,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.doevida.config.Constantes;
+import com.example.doevida.R;
+import com.example.doevida.config.UserFirebase;
+import com.example.doevida.model.Usuario;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.text.ParseException;
 
 public class ConfigActivity extends AppCompatActivity {
 

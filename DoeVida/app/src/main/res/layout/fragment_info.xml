@@ -1,5 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</RelativeLayout>
+
+    <TextView
+        android:id="@+id/doacao_frag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Informações"
+        android:textColor="#090909"
+        android:textSize="32dp"
+        android:textStyle="italic"
+        android:padding="16dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/texto_info1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto1"
+            android:textColor="#090909"
+            android:textSize="20dp"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:id="@+id/texto_info2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto2"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"
+
+            />
+        <TextView
+            android:id="@+id/texto_info3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto3"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"
+
+            />
+        <TextView
+            android:id="@+id/texto_info4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto4"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"
+
+            />
+        <TextView
+            android:id="@+id/texto_info5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto5"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"
+
+            />
+        <TextView
+            android:id="@+id/texto_info6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto6"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"
+
+            />
+        <TextView
+            android:id="@+id/texto_info7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto7"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:layout_marginBottom="8dp"
+
+            />
+
+        <TextView
+            android:id="@+id/texto_inf8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto8"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+
+            />
+
+</LinearLayout>
+
+</LinearLayout>

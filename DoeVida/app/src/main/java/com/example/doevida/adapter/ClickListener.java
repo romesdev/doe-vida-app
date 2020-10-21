@@ -1,4 +1,4 @@
-package com.example.doevida;
+package com.example.doevida.adapter;
 
 import android.content.Context;
 import android.view.GestureDetector;

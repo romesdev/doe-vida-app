@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view_home"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:background="#D3C7C9">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon_img_home"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                app:srcCompat="@drawable/ic_baseline_location_on_24">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/icon_img_home"
+                android:layout_toRightOf="@id/icon_img_home" >
+
+                <TextView
+                    android:id="@+id/text_local_centro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:textColor="#090909"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="@string/crato">
+                </TextView>
+                <TextView
+                    android:id="@+id/centro_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:textColor="#090909"
+                    android:textSize="18dp"
+                    android:textStyle="italic"
+                    android:text="Distância:..."/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/state_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="#090909"
+                android:textSize="16dp"
+                android:textStyle="italic"
+                android:text="VER NO MAPA"
+                android:onClick="verCrato"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"/>
+
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_local2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="#D3C7C9">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_img_home2"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    app:srcCompat="@drawable/ic_baseline_location_on_24">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toEndOf="@id/icon_img_home2"
+                    android:layout_toRightOf="@id/icon_img_home2" >
+
+                    <TextView
+                        android:id="@+id/text_local_centro2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:textColor="#090909"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/fortaleza">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/centro_home2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:textColor="#090909"
+                        android:textSize="18dp"
+                        android:textStyle="italic"
+                        android:text="Distância:..."/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/state_home2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:textColor="#090909"
+                    android:textSize="16dp"
+                    android:textStyle="italic"
+                    android:text="VER NO MAPA"
+                    android:onClick="verFortaleza"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"/>
+
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/card_view_local3"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:animateLayoutChanges="true"
+
+app:cardCornerRadius="10dp"
+app:cardElevation="4dp"
+app:cardUseCompatPadding="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#D3C7C9">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_img_home3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            app:srcCompat="@drawable/ic_baseline_location_on_24">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/icon_img_home3"
+            android:layout_toRightOf="@id/icon_img_home3" >
+
+            <TextView
+                android:id="@+id/text_local_centro3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/iguatu">
+            </TextView>
+            <TextView
+                android:id="@+id/centro_home3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                android:text="Distância:..."/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/state_home3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:textColor="#090909"
+            android:textSize="16dp"
+            android:textStyle="italic"
+            android:text="VER NO MAPA"
+            android:onClick="verIguatu"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/card_view_local4"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:animateLayoutChanges="true"
+
+app:cardCornerRadius="10dp"
+app:cardElevation="4dp"
+app:cardUseCompatPadding="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#D3C7C9">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_img_home4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            app:srcCompat="@drawable/ic_baseline_location_on_24">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/icon_img_home4"
+            android:layout_toRightOf="@id/icon_img_home4" >
+
+            <TextView
+                android:id="@+id/text_local_centro4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/juazeiro">
+            </TextView>
+            <TextView
+                android:id="@+id/centro_home4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                android:text="Distância:..."/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/state_home4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:textColor="#090909"
+            android:textSize="16dp"
+            android:textStyle="italic"
+            android:text="VER NO MAPA"
+            android:onClick="verJuazeiro"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/card_view_local5"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:animateLayoutChanges="true"
+
+app:cardCornerRadius="10dp"
+app:cardElevation="4dp"
+app:cardUseCompatPadding="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#D3C7C9">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_img_home5"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            app:srcCompat="@drawable/ic_baseline_location_on_24">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/icon_img_home5"
+            android:layout_toRightOf="@id/icon_img_home5" >
+
+            <TextView
+                android:id="@+id/text_local_centro5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/quixada">
+            </TextView>
+            <TextView
+                android:id="@+id/centro_home5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                android:text="Distância:..."/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/state_home5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:textColor="#090909"
+            android:textSize="16dp"
+            android:textStyle="italic"
+            android:text="VER NO MAPA"
+            android:onClick="verQuixada"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/card_view_local6"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:animateLayoutChanges="true"
+
+app:cardCornerRadius="10dp"
+app:cardElevation="4dp"
+app:cardUseCompatPadding="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="#D3C7C9">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_img_home6"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            app:srcCompat="@drawable/ic_baseline_location_on_24">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/icon_img_home6"
+            android:layout_toRightOf="@id/icon_img_home6" >
+
+            <TextView
+                android:id="@+id/text_local_centro6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/sobral">
+            </TextView>
+            <TextView
+                android:id="@+id/centro_home6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:textColor="#090909"
+                android:textSize="18dp"
+                android:textStyle="italic"
+                android:text="Distância:..."/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/state_home6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:textColor="#090909"
+            android:textSize="16dp"
+            android:textStyle="italic"
+            android:text="VER NO MAPA"
+            android:onClick="verSobral"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+    </LinearLayout>
+
+
+
+

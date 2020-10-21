@@ -1,7 +1,8 @@
-package com.example.doevida;
+package com.example.doevida.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +18,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.doevida.CarregarDados;
+import com.example.doevida.R;
+import com.example.doevida.activity.CadastroDoacaoActivity;
+import com.example.doevida.activity.LoginActivity;
+import com.example.doevida.adapter.ClickListener;
+import com.example.doevida.adapter.recyAdapter;
+import com.example.doevida.config.Constantes;
+import com.example.doevida.config.UserFirebase;
+import com.example.doevida.model.Doacao;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -29,11 +40,13 @@ import java.util.ArrayList;
 
 public class DoarFragment extends Fragment implements  View.OnClickListener, AdapterView.OnItemClickListener {
 
+
     private static class ViewHolder {
         TextView textView;
         RecyclerView recyclerView;
         FloatingActionButton fab;
     }
+
 
     private ViewHolder mViewHolder = new ViewHolder();
     private recyAdapter mAdapter;
@@ -41,8 +54,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
     private ArrayList<Doacao> listDoacoes;
     FirebaseFirestore dbFire;// Cloud Firestore
     String idUserAtual;
-
-
+    private CarregarDados load;
 
 
     @Nullable
@@ -56,7 +68,6 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
         this.idUserAtual = UserFirebase.getIDUsuario();
 
 
-
         this.mViewHolder.fab = view.findViewById(R.id.fab_add);
         this.mViewHolder.recyclerView = view.findViewById(R.id.my_recycler_view);
 
@@ -64,7 +75,10 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
         this.mViewHolder.recyclerView.setLayoutManager(linearLayoutManager);
 
         this.listDoacoes = new ArrayList<>();
-        this.mAdapter = new recyAdapter(this.listDoacoes,getContext());
+        this.mAdapter = new recyAdapter(this.listDoacoes, getContext());
+
+        CarregarDados load = new CarregarDados(getActivity());
+
 
         //recyclerview - lista de doações
         this.mViewHolder.recyclerView.setAdapter(mAdapter);
@@ -76,7 +90,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
                         new ClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                Doacao doacao = listDoacoes.get( position );
+                                Doacao doacao = listDoacoes.get(position);
                                 Toast.makeText(getContext(), "" + doacao.getData(), Toast.LENGTH_SHORT).show();
                                 itemSelecionado = position;
 
@@ -90,7 +104,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
 
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Doacao doacao = listDoacoes.get( position );
+                                Doacao doacao = listDoacoes.get(position);
                                 Toast.makeText(getContext(), "" + doacao.getData(), Toast.LENGTH_SHORT).show();
                                 itemSelecionado = position;
 
@@ -103,7 +117,22 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
 
         this.mViewHolder.fab.setOnClickListener(this);
 
-        mostrarDados();
+
+        //usando handler para aguardar o carregamento de dados
+        // do meu recycler view que é retirado das coleções do firestore
+        load.iniciar();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mostrarDados();
+
+                load.sumir();
+            }
+        }, 5000);
+
+
+
 
 
 
@@ -111,7 +140,8 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
     }
 
 
-    public void mostrarDados(){
+    public void mostrarDados() {
+
 
         this.dbFire.collection("usuarios").document(this.idUserAtual)
                 .collection("doações")
@@ -125,7 +155,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
                         listDoacoes.clear();
 
 
-                        for(DocumentSnapshot doc: task.getResult()){
+                        for (DocumentSnapshot doc : task.getResult()) {
                             Doacao doacao = new Doacao(
                                     doc.getString("id"),
                                     doc.getString("nome"),
@@ -138,7 +168,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
                             listDoacoes.add(doacao);
                         }
                         //mAdapter
-                        if (getActivity()!=null) {
+                        if (getActivity() != null) {
                             mAdapter = new recyAdapter(listDoacoes, getContext());
                             mViewHolder.recyclerView.setAdapter(mAdapter);
                         }
@@ -149,11 +179,17 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
                     @Override
                     public void onFailure(@NonNull Exception e) {
 
-                        Toast.makeText( getContext(),"Falha", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Falha", Toast.LENGTH_SHORT).show();
 
                     }
                 });
+
+        //load.sumir();
+
+
     }
+
+
 
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        MenuInflater inflater = new MenuInflater(getContext());
@@ -200,7 +236,7 @@ public class DoarFragment extends Fragment implements  View.OnClickListener, Ada
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Doacao doacao = listDoacoes.get( position );
-        Toast.makeText(getContext(), "00000" + doacao.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "" + doacao.toString(), Toast.LENGTH_SHORT).show();
         this.itemSelecionado = position;
 
 

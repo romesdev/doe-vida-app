@@ -1,4 +1,4 @@
-package com.example.doevida;
+package com.example.doevida.config;
 
 import android.util.Base64;
 
